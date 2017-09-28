@@ -1,0 +1,390 @@
+{
+  /*
+	// Place your snippets for TypeScript React here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+  "Log": {
+    "prefix": "log",
+    "body": ["console.log($0);"],
+    "description": "Log"
+  },
+  "Log a string": {
+    "prefix": "logs",
+    "body": ["console.log('$0');"],
+    "description": "Log string"
+  },
+  "Log an object": {
+    "prefix": "logo",
+    "body": ["console.log('$1 :', JSON.stringify($1));"],
+    "description": "Log object"
+  },
+  "JSON.stringify()": {
+    "prefix": "json",
+    "body": ["JSON.stringify($0)"],
+    "description": "JSON.stringify()"
+  },
+  "JSON.parse()": {
+    "prefix": "jsonp",
+    "body": ["JSON.parse($0)"],
+    "description": "JSON.parse()"
+  },
+  "setState({..})": {
+    "prefix": "ss",
+    "body": ["this.setState({ $0 })"],
+    "description": "this.setState({...})) (sync)"
+  },
+  "setState((state) => ({..})": {
+    "prefix": "ssa",
+    "body": ["this.setState(state => ({ $0 }))", "$0"],
+    "description": "this.setState((state => ({..}))"
+  },
+  "setState((state, props) => ({..})": {
+    "prefix": "ssp",
+    "body": ["this.setState((state, props) => ({ $0 }))", "$0"],
+    "description": "this.setState((state, props) => ({..}))"
+  },
+  "this.state.": {
+    "prefix": "s",
+    "body": ["this.state.$0"],
+    "description": "this.state."
+  },
+  "this.props.": {
+    "prefix": "p",
+    "body": ["this.props.$0"],
+    "description": "this.props."
+  },
+  "log props": {
+    "prefix": "lp",
+    "body": ["console.log('props', this.props)"],
+    "description": "console.log(this.props);"
+  },
+  "log state": {
+    "prefix": "ls",
+    "body": ["console.log('state', this.state);"],
+    "description": "console.log(this.state)"
+  },
+  "attr={..}": {
+    "prefix": "at",
+    "body": ["${1:attr}={${2:value}}$0"],
+    "description": "JSX attribute"
+  },
+  "componentDidMount": {
+    "prefix": "cdm",
+    "body": ["componentDidMount() {", "   $0", "}"],
+    "description": "componentDidMount()"
+  },
+  "componentWillMount": {
+    "prefix": "cwm",
+    "body": ["componentWillMount() {", "   $0", "}"],
+    "description": "componentWillMount()"
+  },
+  "componentWillReceiveProps": {
+    "prefix": "cwrp",
+    "body": [
+      "// Invoked when a component is receiving new props.",
+      "// Not called for the initial render",
+      "componentWillReceiveProps(nextProps: $1Props, nextState: $1State) {",
+      "   $0",
+      "}"
+    ],
+    "description": "componentWillReceiveProps(nextProps)"
+  },
+  "shouldComponentUpdate": {
+    "prefix": "scu",
+    "body": [
+      "// Invoked before rendering when new props or state are being received.",
+      "// Not called for the initial render",
+      "shouldComponentUpdate(nextProps: $1, nextState: $2): boolean {",
+      "   $0",
+      "}"
+    ],
+    "description": "shouldComponentUpdate(nextProps, nextState) => boolean"
+  },
+  "componentWillUpdate": {
+    "prefix": "cwu",
+    "body": [
+      "// Invoked immediately before rendering when new props or state are being received.",
+      "// Not called for the initial render",
+      "// Cannot use this.setState()",
+      "componentWillUpdate(nextProps: $1Props, nextState: $2State) {",
+      "   $0",
+      "}"
+    ],
+    "description": "componentWillUpdate(nextProps, nextState)"
+  },
+  "componentDidUpdate": {
+    "prefix": "cdu",
+    "body": [
+      "// Invoked immediately after the component's updates are flushed to the DOM.",
+      "// Not called for the initial render",
+      "componentDidUpdate(prevProps: $1Props, prevState: $2State) {",
+      "   $0",
+      "}"
+    ],
+    "description": "componentDidUpdate(prevProps, prevState)"
+  },
+  "componentWillUnmount": {
+    "prefix": "cwun",
+    "body": [
+      "// Invoked immediately before a component is unmounted from the DOM.",
+      "componentWillUnmount() {",
+      "   $0",
+      "}"
+    ],
+    "description": "componentWillUnmount()"
+  },
+  "handleChange": {
+    "prefix": "hch",
+    "body": [
+      "handleChange = (e: React.ChangeEvent<any>) => {",
+      "   this.setState({[ (e.target as any).name ]: e.target.value });",
+      "   $0",
+      "}"
+    ],
+    "description": "handleChange = e => {..}"
+  },
+  "handleSubmit": {
+    "prefix": "hsub",
+    "body": ["handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {", "  e.preventDefault();", "  $0", "}"],
+    "description": "handleSubmit = e => {..}"
+  },
+  "handleClick": {
+    "prefix": "hcl",
+    "body": [
+      "handleClick${1:Thing}Button = (e: React.MouseEvent<HTMLButtonElement>) => {",
+      "  e.preventDefault();",
+      "  $0",
+      "}"
+    ],
+    "description": "handleClick = e => {..}"
+  },
+  "Jest Unit Test": {
+    "prefix": "it",
+    "body": ["it('$1', () => {", "   $0", "});"],
+    "description": "it('$1', () => {...})"
+  },
+  "Jest Test Suite": {
+    "prefix": "desc",
+    "body": ["describe('$1', () => {", "   $0", "});"],
+    "description": "describe('$1', () => {...})"
+  },
+  "Snapshot Test": {
+    "prefix": "snap",
+    "body": [
+      "import * as React from 'react';",
+      "import * as renderer from 'react-test-renderer';",
+      "",
+      "import $1 from './$1';",
+      "",
+      "describe('<$1 />', () => {",
+      "",
+      "  it('renders $1 correctly', () => {",
+      "     const tree = renderer.create(",
+      "         <$1 $0 />",
+      "     ).toJSON();",
+      "     expect(tree).toMatchSnapshot();",
+      "  });",
+      "",
+      "});",
+      ""
+    ],
+    "description": "Jest Snapshot test"
+  },
+  "Snapshot Test, named import": {
+    "prefix": "snape",
+    "body": [
+      "import * as React from 'react';",
+      "import * as renderer from 'react-test-renderer';",
+      "",
+      "import { $1 } from './$1';",
+      "",
+      "describe('<$1 />', () => {",
+      "",
+      "  it('renders $1 correctly', () => {",
+      "     const tree = renderer.create(",
+      "         <$1 $0 />",
+      "     ).toJSON();",
+      "     expect(tree).toMatchSnapshot();",
+      "  });",
+      "",
+      "});",
+      ""
+    ],
+    "description": "Jest Snapshot test, named module import"
+  },
+  "Snapshot Test with React Router ": {
+    "prefix": "snapr",
+    "body": [
+      "import * as React from 'react';",
+      "import * as renderer from 'react-test-renderer';",
+      "",
+      "import { StaticRouter } from 'react-router-dom';",
+      "import $1 from './$1';",
+      "",
+      "describe('<$1 />', () => {",
+      "",
+      "  it('renders $1 correctly', () => {",
+      "     const tree = renderer.create(",
+      "       <StaticRouter context={{}}>",
+      "         <$1 $0 />",
+      "       </StaticRouter>",
+      "     ).toJSON();",
+      "     expect(tree).toMatchSnapshot();",
+      "  });",
+      "",
+      "});",
+      ""
+    ],
+    "description": "Jest Snapshot test with React Router"
+  },
+  "Snapshot Test with React Router (named export)": {
+    "prefix": "snaper",
+    "body": [
+      "import * as React from 'react';",
+      "import * as renderer from 'react-test-renderer';",
+      "",
+      "import { StaticRouter } from 'react-router-dom';",
+      "import { $1 } from './$1';",
+      "",
+      "describe('<$1 />', () => {",
+      "",
+      "  it('renders $1 correctly', () => {",
+      "     const tree = renderer.create(",
+      "       <StaticRouter context={{}}>",
+      "         <$1 $0 />",
+      "       </StaticRouter>",
+      "     ).toJSON();",
+      "     expect(tree).toMatchSnapshot();",
+      "  });",
+      "",
+      "});",
+      ""
+    ],
+    "description": "Jest Snapshot test with React Router"
+  },
+  "Enzyme test file, shallow": {
+    "prefix": "ens",
+    "body": [
+      "import * as React from 'react';",
+      "import { shallow } from 'enzyme'",
+      "",
+      "import { $1 } from './$1';",
+      "",
+      "describe('<$1 />', () => {",
+      "",
+      "  it('should $2', () => {",
+      "     const tree = shallow(<$1 $0 />);",
+      "     ",
+      "     expect(tree).toBeTruthy()",
+      "  });",
+      "",
+      "});",
+      ""
+    ],
+    "description": "Test file, Enzyme shallow"
+  },
+  "Enzyme test file, mount": {
+    "prefix": "enm",
+    "body": [
+      "import * as React from 'react';",
+      "import { mount } from 'enzyme'",
+      "",
+      "import { $1 } from './$1';",
+      "",
+      "describe('<$1 />', () => {",
+      "",
+      "  it('should $2', () => {",
+      "     const tree = mount(<$1 $0 />);",
+      "     ",
+      "     expect(tree).toBeTruthy()",
+      "  });",
+      "",
+      "});",
+      ""
+    ],
+    "description": "Test file, Enzyme mount"
+  },
+  "React Stateless Functional Component": {
+    "prefix": "rsc",
+    "body": [
+      "import * as React from 'react';",
+      "",
+      "export interface $1Props {",
+      "  $2",
+      "}",
+      "",
+      "export const $1: React.SFC<$1Props> = (props) => {",
+      "  return (",
+      "    $0",
+      "  );",
+      "};",
+      "",
+      "$1.displayName = '$1'",
+      ""
+    ],
+    "description": "React Stateless Functional Component"
+  },
+  "React Class Component": {
+    "prefix": "rcc",
+    "body": [
+      "import * as React from 'react';",
+      "",
+      "export interface $1Props {",
+      "  $2",
+      "}",
+      "",
+      "export interface $1State {",
+      "  $3",
+      "}",
+      "",
+      "export class $1 extends React.Component<$1Props, $1State> {",
+      "  render() {",
+      "    return (",
+      "      $0",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "React Class Component"
+  },
+  "React Class Component": {
+    "prefix": "rccdm",
+    "body": [
+      "import * as React from 'react';",
+      "",
+      "export interface $1Props {",
+      "  $2",
+      "}",
+      "",
+      "export interface $1State {",
+      "  $3",
+      "}",
+      "",
+      "export class $1 extends React.Component<$1Props, $1State> {",
+      "  componentDidMount() {",
+      "    $0",
+      "  }",
+      "",
+      "  render() {",
+      "    return (",
+      "      <div>Hello</div>",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "React Class Component"
+  }
+}

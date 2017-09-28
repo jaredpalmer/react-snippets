@@ -1,0 +1,281 @@
+{
+  /*
+	// Place your snippets for JavaScript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+  "Log": {
+    "prefix": "log",
+    "body": ["console.log($0);"],
+    "description": "Log"
+  },
+  "Log a string": {
+    "prefix": "logs",
+    "body": ["console.log('$0');"],
+    "description": "Log string"
+  },
+  "Log an object": {
+    "prefix": "logo",
+    "body": ["console.log('$1 :', JSON.stringify($1));"],
+    "description": "Log object"
+  },
+  "Log if": {
+    "prefix": "logif",
+    "body": ["if (${1:cond}) {", "		console.log($0);", "}"],
+    "description": "if (x) log"
+  },
+  "JSON.stringify()": {
+    "prefix": "json",
+    "body": ["JSON.stringify($0)"],
+    "description": "JSON.stringify()"
+  },
+  "JSON.parse()": {
+    "prefix": "jsonp",
+    "body": ["JSON.parse($0)"],
+    "description": "JSON.parse()"
+  },
+  "setState((state) => ({..})": {
+    "prefix": "ss",
+    "body": ["this.setState(state => ({ $1 }));", "$0"],
+    "description": "this.setState(state => ({..}))"
+  },
+  "setState((state, props) => ({..})": {
+    "prefix": "ssp",
+    "body": ["this.setState((state, props) => ({ $1 }));", "$0"],
+    "description": "this.setState((state, props) => ({..}))"
+  },
+  "Test case": {
+    "prefix": "it",
+    "body": ["it('$1', () => {", "		$0", "});"],
+    "description": "Jest test case"
+  },
+  "this.state.": {
+    "prefix": "s",
+    "body": ["this.state."],
+    "description": "this.state."
+  },
+  "this.props.": {
+    "prefix": "p",
+    "body": ["this.props."],
+    "description": "this.props."
+  },
+  "attr={..}": {
+    "prefix": "at",
+    "body": ["${1:attr}={${2:value}}$0"],
+    "description": "JSX attribute"
+  },
+  "Snapshot Test": {
+    "prefix": "snap",
+    "body": [
+      "import React from 'react';",
+      "import renderer from 'react-test-renderer';",
+      "import $1 from './$1'",
+      "",
+      "it('renders $1 correctly', () => {",
+      "		const tree = renderer.create(",
+      "				<$1 $0",
+      "		 		/>",
+      "   ).toJSON();",
+      "		expect(tree).toMatchSnapshot();",
+      "});",
+      ""
+    ],
+    "description": "Jest Snapshot test"
+  },
+  "Snapshot Test with React Router ": {
+    "prefix": "snapr",
+    "body": [
+      "import React from 'react';",
+      "import renderer from 'react-test-renderer';",
+      "import StaticRouter from 'react-router-dom/StaticRouter';",
+      "import $1 from './$1'",
+      "",
+      "it('renders $1 form correctly', () => {",
+      "		const tree = renderer.create(",
+      "				<StaticRouter context={{}}>",
+      "          <$1 $0",
+      "		 		   />",
+      "		 		</StaticRouter>",
+      "   ).toJSON();",
+      "		expect(tree).toMatchSnapshot();",
+      "});",
+      ""
+    ],
+    "description": "Jest Snapshot test with React Router"
+  },
+  "React Class": {
+    "prefix": "rcc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "class $1 extends React.Component {",
+      "		render() {",
+      "			return (",
+      "       $0",
+      "		 	);",
+      "   }",
+      "",
+      "}",
+      "",
+      "export default $1;"
+    ],
+    "description": "React Class"
+  },
+  "React Class with PropTypes": {
+    "prefix": "rccp",
+    "body": [
+      "import React from 'react';",
+      "",
+      "class $1 extends React.Component {",
+      "   static propTypes = {}",
+      "",
+      "		render() {",
+      "			return (",
+      "       $0",
+      "		 	);",
+      "   }",
+      "",
+      "}",
+      "",
+      "export default $1;"
+    ],
+    "description": "React Class with PropTypes"
+  },
+  "React Stateless Functional Component": {
+    "prefix": "rsc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "function $1 ($2) {",
+      "  return (",
+      "   $0",
+      "	 );",
+      "}",
+      "",
+      "export default $1;"
+    ],
+    "description": "React Stateless Functional Component"
+  },
+  "React Stateless Functional Component with PropTypes": {
+    "prefix": "rscp",
+    "body": [
+      "import React, { PropTypes } from 'react';",
+      "",
+      "function $1 ($2) {",
+      "  return (",
+      "   $0",
+      "	 );",
+      "}",
+      "",
+      "$1.propTypes = {}",
+      "",
+      "export default $1;"
+    ],
+    "description": "React Stateless Functional Component with PropTypes"
+  },
+  "componentDidMount": {
+    "prefix": "cdm",
+    "body": ["componentDidMount() {", "   $0", "}"],
+    "description": "componentDidMount()"
+  },
+  "componentWillMount": {
+    "prefix": "cwm",
+    "body": ["componentWillMount() {", "   $0", "}"],
+    "description": "componentWillMount()"
+  },
+  "componentWillReceiveProps": {
+    "prefix": "cwrp",
+    "body": [
+      "// Invoked when a component is receiving new props.",
+      "// Not called for the initial render",
+      "componentWillReceiveProps(nextProps, nextState) {",
+      "   $0",
+      "}"
+    ],
+    "description": "componentWillReceiveProps(nextProps, nextState)"
+  },
+  "shouldComponentUpdate": {
+    "prefix": "scu",
+    "body": [
+      "// Invoked before rendering when new props or state are being received. ",
+      "// Not called for the initial render",
+      "shouldComponentUpdate(nextProps, nextState) {",
+      "   $0",
+      "}"
+    ],
+    "description": "shouldComponentUpdate(nextProps, nextState) => boolean"
+  },
+  "componentWillUpdate": {
+    "prefix": "cwu",
+    "body": [
+      "// Invoked immediately before rendering when new props or state are being received.",
+      "// Not called for the initial render",
+      "// Cannot use this.setState()",
+      "componentWillUpdate(nextProps, nextState) {",
+      "   $0",
+      "}"
+    ],
+    "description": "componentWillUpdate(nextProps, nextState)"
+  },
+  "componentDidUpdate": {
+    "prefix": "cdu",
+    "body": [
+      "// Invoked immediately after the component's updates are flushed to the DOM.",
+      "// Not called for the initial render",
+      "componentDidUpdate(prevProps, prevState) {",
+      "   $0",
+      "}"
+    ],
+    "description": "componentDidUpdate(prevProps, prevState)"
+  },
+  "componentWillUnmount": {
+    "prefix": "cwun",
+    "body": [
+      "// Invoked immediately before a component is unmounted from the DOM.",
+      "componentWillUnmount() {",
+      "   $0",
+      "}"
+    ],
+    "description": "componentWillUnmount()"
+  },
+  "React Router Link": {
+    "prefix": "rrl",
+    "body": ["import Link from 'react-router-dom/Link';"],
+    "description": "React Router Link"
+  },
+  "React Router NavLink": {
+    "prefix": "rrnl",
+    "body": ["import NavLink from 'react-router-dom/NavLink';"],
+    "description": "React Router NavLink"
+  },
+  "React Router Switch": {
+    "prefix": "rrs",
+    "body": ["import Switch from 'react-router-dom/Switch';"],
+    "description": "React Router Switch"
+  },
+  "React Router Route": {
+    "prefix": "rrr",
+    "body": ["import Route from 'react-router-dom/Route';"],
+    "description": "React Router Route"
+  },
+  "React Router Redirect": {
+    "prefix": "rrre",
+    "body": ["import Redirect from 'react-router-dom/Redirect';"],
+    "description": "React Router Redirect"
+  },
+  "Connect": {
+    "prefix": "conn",
+    "body": ["connect(state => ({ $0 })"],
+    "description": "Redux Connect"
+  }
+}

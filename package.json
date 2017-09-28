@@ -1,0 +1,22 @@
+{
+  "name": "Jared Palmer's React Snippets",
+  "publisher": "jaredpamer",
+  "description": "React snippets for JavaScript and TypeScript",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "0.10.x"
+  },
+  "categories": ["Snippets"],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/javascriptreact.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/typescriptreact.json"
+      }
+    ]
+  }
+}
