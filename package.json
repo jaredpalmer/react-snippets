@@ -1,6 +1,6 @@
 {
-  "name": "Jared Palmer's React Snippets",
-  "publisher": "jaredpamer",
+  "name": "react-snippets",
+  "publisher": "jaredpalmer",
   "description": "React snippets for JavaScript and TypeScript",
   "version": "0.1.0",
   "engines": {
